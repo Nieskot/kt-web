@@ -32,7 +32,6 @@ HTML podstrony nadal jest potrzebny: rekord w indeksie nie tworzy automatycznie 
 
 - `summary` to krótki opis katalogowy (zwykle 25–45 słów). Jest wyświetlany na listach `/odcinki/`, profilach twórców i w wynikach wyszukiwania.
 - `description` to pełne streszczenie fabuły. Jest wyświetlane w sekcji „O czym jest ten odcinek” na stronie danego odcinka.
-- Nie wpisuj tego samego tekstu w oba pola. Do przygotowania obu opisów użyj `pv/PROMPT-DO-OPISOW-ODCINKOW.txt`, wklejając scenariusz lub transkrypcję. Prompt domyślnie zwraca oba pola.
 - Jeśli pełny opis nie jest jeszcze gotowy, zostaw `description` puste lub pomiń pole; strona pokaże komunikat zastępczy. Nie kopiuj automatycznie `summary` do `description`.
 
 ## Co aktualizuje się z indeksu?
@@ -78,4 +77,3 @@ Po zmianie JS/CSS zwiększ wspólny parametr `?v=` we wszystkich stronach i szab
 - Publikowana jest zawartość `public/`; `pv/` i `tools/` są materiałami roboczymi.
 - Nie umieszczaj haseł, tokenów ani kluczy w HTML/JS.
 - Nie edytuj ręcznie `public/sitemap.xml`; generuj ją narzędziem.
-- Raporty `RAPORT-*` i `POPRAWKI-*` są historyczne, nie zastępują tej instrukcji.
