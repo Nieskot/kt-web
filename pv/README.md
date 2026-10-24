@@ -10,7 +10,7 @@ To jest punkt wejścia do dokumentacji. Jeśli instrukcja w innym pliku przeczy 
 - **`SZABLONY-WPISOW/SEZON.js.txt`** — wzór rekordu sezonu.
 - **`SZABLONY-WPISOW/WZORY-WPISOW-DO-INDEKSU.md`** — porównanie pól i relacji rekordów.
 - **`SZABLONY-HTML/`** — szablony stron, które trzeba skopiować tylko przy tworzeniu nowej fizycznej podstrony.
-- **`SZABLON-OPISU-ODCINKA.md`** — materiał pomocniczy do opracowania opisu; nie są źródłem danych wiki.
+- **`SZABLON-OPISU-ODCINKA.md`** — materiał pomocniczy do opracowania opisu; nie jest źródłem danych wiki.
 - **`../tools/validate-wiki.js`** — kontrola techniczna przed publikacją.
 - **`../tools/generate-catalog.js`** — generuje statyczny katalog odcinków i listę haseł wyszukiwarki.
 - **`../tools/generate_sitemap.py`** — generator mapy witryny.
