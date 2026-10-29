@@ -337,7 +337,7 @@ for (const file of htmlFiles) {
     ['og:description', /<meta\b(?=[^>]*\bproperty=["']og:description["'])[^>]*\bcontent=["'][^"']+?["'][^>]*>/i],
     ['og:url', /<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*\bcontent=["']https:\/\/krainatworcow\.pl\//i],
     ['og:image', /<meta\b(?=[^>]*\bproperty=["']og:image["'])[^>]*\bcontent=["']https:\/\/krainatworcow\.pl\/assets\/kt\.webp["'][^>]*>/i],
-    ['twitter:card', /<meta\b(?=[^>]*\bname=["']twitter:card["'])[^>]*\bcontent=["']summary_large_image["'][^>]*>/i],
+    ['twitter:card', /<meta\b(?=[^>]*\bname=["']twitter:card["'])[^>]*\bcontent=["']summary["'][^>]*>/i],
   ];
   for (const [label, pattern] of requiredTags) {
     if (!pattern.test(html)) fail(`${relative}: brak lub niepoprawne metadane SEO: ${label}.`);
@@ -370,7 +370,7 @@ if (fs.existsSync(templateDir)) {
       ['theme-color', /<meta\b(?=[^>]*\bname=[\"']theme-color[\"'])[^>]*\bcontent=[\"']#2d7c0b[\"'][^>]*>/i],
       ['canonical', /<link\b(?=[^>]*\brel=[\"']canonical[\"'])[^>]*\bhref=[\"']https:\/\/krainatworcow\.pl\//i],
       ['og:image', /<meta\b(?=[^>]*\bproperty=[\"']og:image[\"'])[^>]*\bcontent=[\"']https:\/\/krainatworcow\.pl\/assets\/kt\.webp[\"'][^>]*>/i],
-      ['twitter:card', /<meta\b(?=[^>]*\bname=[\"']twitter:card[\"'])[^>]*\bcontent=[\"']summary_large_image[\"'][^>]*>/i],
+      ['twitter:card', /<meta\b(?=[^>]*\bname=[\"']twitter:card[\"'])[^>]*\bcontent=[\"']summary[\"'][^>]*>/i],
     ]) {
       if (!pattern.test(template)) fail(`Szablon ${file} ma brakujące metadane SEO: ${label}.`);
     }
