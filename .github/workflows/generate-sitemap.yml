@@ -3,7 +3,7 @@ name: Generate sitemap
 
 on:
   push:
-    branches: [main, master]
+    branches: [pv]
     paths:
       - 'public/**/*.html'
       - 'public/**/index.html'
