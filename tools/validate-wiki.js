@@ -212,11 +212,17 @@ function walk(dir) {
 
 walk(PUBLIC);
 
+const assetHash = file =>
+  crypto.createHash('sha256')
+    .update(read(file).replace(/\r\n/g, '\n'))
+    .digest('hex')
+    .slice(0, 12);
+
 const expectedVersions = {
   'main.css': '20261024-episode-title-white2',
-  'main.js': crypto.createHash('sha256').update(read(path.join(PUBLIC, 'js', 'main.js'))).digest('hex').slice(0, 12),
-  'catalog-render.js': crypto.createHash('sha256').update(read(path.join(PUBLIC, 'js', 'catalog-render.js'))).digest('hex').slice(0, 12),
-  'catalog-sync.js': crypto.createHash('sha256').update(read(path.join(PUBLIC, 'js', 'catalog-sync.js'))).digest('hex').slice(0, 12),
+  'main.js': assetHash(path.join(PUBLIC, 'js', 'main.js')),
+  'catalog-render.js': assetHash(path.join(PUBLIC, 'js', 'catalog-render.js')),
+  'catalog-sync.js': assetHash(path.join(PUBLIC, 'js', 'catalog-sync.js')),
 };
 
 // Wersja indeksu wyszukiwania jest numeryczna i może zmieniać się przy bumpowaniu.

@@ -17,8 +17,16 @@ const ASSETS = ['main.js', 'catalog-render.js', 'catalog-sync.js'];
 
 function hashFor(asset) {
   const file = path.join(PUBLIC, 'js', asset);
-  if (!fs.existsSync(file)) throw new Error(`Brak pliku: ${path.relative(ROOT, file)}`);
-  return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex').slice(0, 12);
+  if (!fs.existsSync(file)) {
+    throw new Error(`Brak pliku: ${path.relative(ROOT, file)}`);
+  }
+
+  const content = fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
+
+  return crypto.createHash('sha256')
+    .update(content)
+    .digest('hex')
+    .slice(0, 12);
 }
 
 function listHtml(dir) {
