@@ -318,9 +318,9 @@ if (generatedPagesCheck.status !== 0) {
 }
 
 // SEO/social preview checks for every public page except the intentionally noindex 404 page.
-const ogImage = path.join(PUBLIC, 'assets', 'og-default.png');
+const ogImage = path.join(PUBLIC, 'assets', 'kt.webp');
 if (!fs.existsSync(ogImage)) {
-  fail('Brak domyślnej grafiki Open Graph: public/assets/og-default.png.');
+  fail('Brak grafiki Open Graph: public/assets/kt.webp.');
 }
 
 for (const file of htmlFiles) {
@@ -336,7 +336,7 @@ for (const file of htmlFiles) {
     ['og:title', /<meta\b(?=[^>]*\bproperty=["']og:title["'])[^>]*\bcontent=["'][^"']+?["'][^>]*>/i],
     ['og:description', /<meta\b(?=[^>]*\bproperty=["']og:description["'])[^>]*\bcontent=["'][^"']+?["'][^>]*>/i],
     ['og:url', /<meta\b(?=[^>]*\bproperty=["']og:url["'])[^>]*\bcontent=["']https:\/\/krainatworcow\.pl\//i],
-    ['og:image', /<meta\b(?=[^>]*\bproperty=["']og:image["'])[^>]*\bcontent=["']https:\/\/krainatworcow\.pl\/assets\/og-default\.png["'][^>]*>/i],
+    ['og:image', /<meta\b(?=[^>]*\bproperty=["']og:image["'])[^>]*\bcontent=["']https:\/\/krainatworcow\.pl\/assets\/kt\.webp["'][^>]*>/i],
     ['twitter:card', /<meta\b(?=[^>]*\bname=["']twitter:card["'])[^>]*\bcontent=["']summary_large_image["'][^>]*>/i],
   ];
   for (const [label, pattern] of requiredTags) {
@@ -369,7 +369,7 @@ if (fs.existsSync(templateDir)) {
     for (const [label, pattern] of [
       ['theme-color', /<meta\b(?=[^>]*\bname=[\"']theme-color[\"'])[^>]*\bcontent=[\"']#2d7c0b[\"'][^>]*>/i],
       ['canonical', /<link\b(?=[^>]*\brel=[\"']canonical[\"'])[^>]*\bhref=[\"']https:\/\/krainatworcow\.pl\//i],
-      ['og:image', /<meta\b(?=[^>]*\bproperty=[\"']og:image[\"'])[^>]*\bcontent=[\"']https:\/\/krainatworcow\.pl\/assets\/og-default\.png[\"'][^>]*>/i],
+      ['og:image', /<meta\b(?=[^>]*\bproperty=[\"']og:image[\"'])[^>]*\bcontent=[\"']https:\/\/krainatworcow\.pl\/assets\/kt\.webp[\"'][^>]*>/i],
       ['twitter:card', /<meta\b(?=[^>]*\bname=[\"']twitter:card[\"'])[^>]*\bcontent=[\"']summary_large_image[\"'][^>]*>/i],
     ]) {
       if (!pattern.test(template)) fail(`Szablon ${file} ma brakujące metadane SEO: ${label}.`);
